@@ -9,9 +9,11 @@
 #import <CoreLocation/CoreLocation.h>
 #import "MapperViewController.h"
 #import "AFJSONRequestOperation.h"
+#import "ContactAnnotation.h"
 
 @interface MapperViewController ()
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) ContactAnnotation *partnerAnnotation;
 @end
 
 @implementation MapperViewController
@@ -26,6 +28,17 @@
     return _locationManager;
 }
 
+@synthesize partnerAnnotation = _partnerAnnotation;
+
+- (ContactAnnotation *)partnerAnnotation {
+    if (!_partnerAnnotation) {
+        _partnerAnnotation = [[ContactAnnotation alloc] init];
+        // Put pin on map
+        [self.mapView addAnnotation:_partnerAnnotation];
+    }
+    return _partnerAnnotation;
+}
+
 - (void)fetchPartnerLocation {
     // FIXME: Fetch partner's location
     NSURL *url = [NSURL URLWithString:@"http://graph.facebook.com/dk"];
@@ -33,6 +46,12 @@
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"Name: %@ %@", [JSON valueForKeyPath:@"first_name"], [JSON valueForKeyPath:@"last_name"]);
+        // FIXME
+        CLLocationDegrees latitude = 41.347330;
+        CLLocationDegrees longitude = -75.661789;
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+        // Show partner's location on map
+        self.partnerAnnotation.coordinate = loc.coordinate;
     } failure:nil];
     
     [operation start];
