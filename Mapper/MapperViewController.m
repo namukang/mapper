@@ -14,12 +14,14 @@
 @interface MapperViewController ()
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) ContactAnnotation *partnerAnnotation;
+@property (nonatomic) NSInteger user; // FIXME
 @end
 
 @implementation MapperViewController
 @synthesize mapView = _mapView;
-
 @synthesize locationManager = _locationManager;
+@synthesize partnerAnnotation = _partnerAnnotation;
+@synthesize user = _user; // FIXME
 
 - (CLLocationManager *)locationManager {
     if (!_locationManager) {
@@ -27,8 +29,6 @@
     }
     return _locationManager;
 }
-
-@synthesize partnerAnnotation = _partnerAnnotation;
 
 - (ContactAnnotation *)partnerAnnotation {
     if (!_partnerAnnotation) {
@@ -84,6 +84,10 @@
               newLocation.coordinate.longitude);
         // TODO: Push location to server
     }
+}
+
+- (IBAction)identityChanged:(UISegmentedControl *)sender {
+    self.user = sender.selectedSegmentIndex;
 }
 
 - (void)viewDidLoad
