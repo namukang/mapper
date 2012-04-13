@@ -6,16 +6,28 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import "MapperViewController.h"
 #import "AFJSONRequestOperation.h"
 
 @interface MapperViewController ()
-
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
 @implementation MapperViewController
+@synthesize mapView = _mapView;
 
-- (void)makeRequest {
+@synthesize locationManager = _locationManager;
+
+- (CLLocationManager *)locationManager {
+    if (!_locationManager) {
+        _locationManager = [[CLLocationManager alloc] init];
+    }
+    return _locationManager;
+}
+
+- (void)fetchPartnerLocation {
+    // FIXME: Fetch partner's location
     NSURL *url = [NSURL URLWithString:@"http://graph.facebook.com/dk"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -25,15 +37,47 @@
     
     [operation start];
 }
+
+// Start receiving standard updates for location
+- (void)startStandardUpdates
+{
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    // Set a movement threshold for new events.
+    self.locationManager.distanceFilter = 5;
+    
+    [self.locationManager startUpdatingLocation];
+}
+
+// Delegate method from the CLLocationManagerDelegate protocol.
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    NSDate* eventDate = newLocation.timestamp;
+    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+    // Only use update if it's from the last 15 seconds
+    if (abs(howRecent) < 15.0)
+    {
+        NSLog(@"latitude %+.6f, longitude %+.6f\n",
+              newLocation.coordinate.latitude,
+              newLocation.coordinate.longitude);
+        // TODO: Push location to server
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self makeRequest];
+    [self fetchPartnerLocation];
+    [self startStandardUpdates];
 }
 
 - (void)viewDidUnload
 {
+    [self setMapView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

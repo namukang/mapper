@@ -26,6 +26,7 @@
 		B5284A53153823CC00DE15EB /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A47153823CC00DE15EB /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B5284A54153823CC00DE15EB /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A49153823CC00DE15EB /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B5284A55153823CC00DE15EB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A4B153823CC00DE15EB /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5284A57153833C500DE15EB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5284A56153833C500DE15EB /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		B5284A49153823CC00DE15EB /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		B5284A4A153823CC00DE15EB /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		B5284A4B153823CC00DE15EB /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		B5284A56153833C500DE15EB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5284A57153833C500DE15EB /* CoreLocation.framework in Frameworks */,
 				B52849FE1537F40C00DE15EB /* MapKit.framework in Frameworks */,
 				B52849E11537F35000DE15EB /* UIKit.framework in Frameworks */,
 				B52849E31537F35000DE15EB /* Foundation.framework in Frameworks */,
@@ -84,6 +87,7 @@
 		B52849D11537F35000DE15EB = {
 			isa = PBXGroup;
 			children = (
+				B5284A56153833C500DE15EB /* CoreLocation.framework */,
 				B5284A36153823CC00DE15EB /* AFNetworking */,
 				B52849FD1537F40C00DE15EB /* MapKit.framework */,
 				B52849E61537F35000DE15EB /* Mapper */,

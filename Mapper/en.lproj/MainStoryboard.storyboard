@@ -29,6 +29,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="uwb-DH-enG" id="amk-wR-fBb"/>
+                    </connections>
                 </viewController>
             </objects>
         </scene>
