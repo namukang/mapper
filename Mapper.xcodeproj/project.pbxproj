@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B52849E11537F35000DE15EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52849E01537F35000DE15EB /* UIKit.framework */; };
+		B52849E31537F35000DE15EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52849E21537F35000DE15EB /* Foundation.framework */; };
+		B52849E51537F35000DE15EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52849E41537F35000DE15EB /* CoreGraphics.framework */; };
+		B52849EB1537F35000DE15EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B52849E91537F35000DE15EB /* InfoPlist.strings */; };
+		B52849ED1537F35000DE15EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B52849EC1537F35000DE15EB /* main.m */; };
+		B52849F11537F35000DE15EB /* MapperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B52849F01537F35000DE15EB /* MapperAppDelegate.m */; };
+		B52849F41537F35100DE15EB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52849F21537F35100DE15EB /* MainStoryboard.storyboard */; };
+		B52849F71537F35100DE15EB /* MapperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B52849F61537F35100DE15EB /* MapperViewController.m */; };
+		B52849FE1537F40C00DE15EB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52849FD1537F40C00DE15EB /* MapKit.framework */; };
+		B5284A4C153823CC00DE15EB /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A38153823CC00DE15EB /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5284A4D153823CC00DE15EB /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A3A153823CC00DE15EB /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5284A4E153823CC00DE15EB /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A3C153823CC00DE15EB /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5284A4F153823CC00DE15EB /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A3E153823CC00DE15EB /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5284A50153823CC00DE15EB /* AFJSONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A40153823CC00DE15EB /* AFJSONUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5284A51153823CC00DE15EB /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A42153823CC00DE15EB /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5284A52153823CC00DE15EB /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A45153823CC00DE15EB /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5284A53153823CC00DE15EB /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A47153823CC00DE15EB /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5284A54153823CC00DE15EB /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A49153823CC00DE15EB /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B5284A55153823CC00DE15EB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A4B153823CC00DE15EB /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B52849DC1537F35000DE15EB /* Mapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B52849E01537F35000DE15EB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B52849E21537F35000DE15EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B52849E41537F35000DE15EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B52849E81537F35000DE15EB /* Mapper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mapper-Info.plist"; sourceTree = "<group>"; };
+		B52849EA1537F35000DE15EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B52849EC1537F35000DE15EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B52849EE1537F35000DE15EB /* Mapper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mapper-Prefix.pch"; sourceTree = "<group>"; };
+		B52849EF1537F35000DE15EB /* MapperAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapperAppDelegate.h; sourceTree = "<group>"; };
+		B52849F01537F35000DE15EB /* MapperAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapperAppDelegate.m; sourceTree = "<group>"; };
+		B52849F31537F35100DE15EB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		B52849F51537F35100DE15EB /* MapperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapperViewController.h; sourceTree = "<group>"; };
+		B52849F61537F35100DE15EB /* MapperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapperViewController.m; sourceTree = "<group>"; };
+		B52849FD1537F40C00DE15EB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B5284A37153823CC00DE15EB /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		B5284A38153823CC00DE15EB /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		B5284A39153823CC00DE15EB /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		B5284A3A153823CC00DE15EB /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		B5284A3B153823CC00DE15EB /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		B5284A3C153823CC00DE15EB /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		B5284A3D153823CC00DE15EB /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		B5284A3E153823CC00DE15EB /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		B5284A3F153823CC00DE15EB /* AFJSONUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONUtilities.h; sourceTree = "<group>"; };
+		B5284A40153823CC00DE15EB /* AFJSONUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONUtilities.m; sourceTree = "<group>"; };
+		B5284A41153823CC00DE15EB /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		B5284A42153823CC00DE15EB /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		B5284A43153823CC00DE15EB /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		B5284A44153823CC00DE15EB /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		B5284A45153823CC00DE15EB /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		B5284A46153823CC00DE15EB /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		B5284A47153823CC00DE15EB /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		B5284A48153823CC00DE15EB /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		B5284A49153823CC00DE15EB /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		B5284A4A153823CC00DE15EB /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		B5284A4B153823CC00DE15EB /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B52849D91537F35000DE15EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B52849FE1537F40C00DE15EB /* MapKit.framework in Frameworks */,
+				B52849E11537F35000DE15EB /* UIKit.framework in Frameworks */,
+				B52849E31537F35000DE15EB /* Foundation.framework in Frameworks */,
+				B52849E51537F35000DE15EB /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B52849D11537F35000DE15EB = {
+			isa = PBXGroup;
+			children = (
+				B5284A36153823CC00DE15EB /* AFNetworking */,
+				B52849FD1537F40C00DE15EB /* MapKit.framework */,
+				B52849E61537F35000DE15EB /* Mapper */,
+				B52849DF1537F35000DE15EB /* Frameworks */,
+				B52849DD1537F35000DE15EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B52849DD1537F35000DE15EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B52849DC1537F35000DE15EB /* Mapper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B52849DF1537F35000DE15EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B52849E01537F35000DE15EB /* UIKit.framework */,
+				B52849E21537F35000DE15EB /* Foundation.framework */,
+				B52849E41537F35000DE15EB /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B52849E61537F35000DE15EB /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				B52849EF1537F35000DE15EB /* MapperAppDelegate.h */,
+				B52849F01537F35000DE15EB /* MapperAppDelegate.m */,
+				B52849F21537F35100DE15EB /* MainStoryboard.storyboard */,
+				B52849F51537F35100DE15EB /* MapperViewController.h */,
+				B52849F61537F35100DE15EB /* MapperViewController.m */,
+				B52849E71537F35000DE15EB /* Supporting Files */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		B52849E71537F35000DE15EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B52849E81537F35000DE15EB /* Mapper-Info.plist */,
+				B52849E91537F35000DE15EB /* InfoPlist.strings */,
+				B52849EC1537F35000DE15EB /* main.m */,
+				B52849EE1537F35000DE15EB /* Mapper-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5284A36153823CC00DE15EB /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B5284A37153823CC00DE15EB /* AFHTTPClient.h */,
+				B5284A38153823CC00DE15EB /* AFHTTPClient.m */,
+				B5284A39153823CC00DE15EB /* AFHTTPRequestOperation.h */,
+				B5284A3A153823CC00DE15EB /* AFHTTPRequestOperation.m */,
+				B5284A3B153823CC00DE15EB /* AFImageRequestOperation.h */,
+				B5284A3C153823CC00DE15EB /* AFImageRequestOperation.m */,
+				B5284A3D153823CC00DE15EB /* AFJSONRequestOperation.h */,
+				B5284A3E153823CC00DE15EB /* AFJSONRequestOperation.m */,
+				B5284A3F153823CC00DE15EB /* AFJSONUtilities.h */,
+				B5284A40153823CC00DE15EB /* AFJSONUtilities.m */,
+				B5284A41153823CC00DE15EB /* AFNetworkActivityIndicatorManager.h */,
+				B5284A42153823CC00DE15EB /* AFNetworkActivityIndicatorManager.m */,
+				B5284A43153823CC00DE15EB /* AFNetworking.h */,
+				B5284A44153823CC00DE15EB /* AFPropertyListRequestOperation.h */,
+				B5284A45153823CC00DE15EB /* AFPropertyListRequestOperation.m */,
+				B5284A46153823CC00DE15EB /* AFURLConnectionOperation.h */,
+				B5284A47153823CC00DE15EB /* AFURLConnectionOperation.m */,
+				B5284A48153823CC00DE15EB /* AFXMLRequestOperation.h */,
+				B5284A49153823CC00DE15EB /* AFXMLRequestOperation.m */,
+				B5284A4A153823CC00DE15EB /* UIImageView+AFNetworking.h */,
+				B5284A4B153823CC00DE15EB /* UIImageView+AFNetworking.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B52849DB1537F35000DE15EB /* Mapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B52849FA1537F35100DE15EB /* Build configuration list for PBXNativeTarget "Mapper" */;
+			buildPhases = (
+				B52849D81537F35000DE15EB /* Sources */,
+				B52849D91537F35000DE15EB /* Frameworks */,
+				B52849DA1537F35000DE15EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mapper;
+			productName = Mapper;
+			productReference = B52849DC1537F35000DE15EB /* Mapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B52849D31537F35000DE15EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Mapper;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = B52849D61537F35000DE15EB /* Build configuration list for PBXProject "Mapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B52849D11537F35000DE15EB;
+			productRefGroup = B52849DD1537F35000DE15EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B52849DB1537F35000DE15EB /* Mapper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B52849DA1537F35000DE15EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B52849EB1537F35000DE15EB /* InfoPlist.strings in Resources */,
+				B52849F41537F35100DE15EB /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B52849D81537F35000DE15EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B52849ED1537F35000DE15EB /* main.m in Sources */,
+				B52849F11537F35000DE15EB /* MapperAppDelegate.m in Sources */,
+				B52849F71537F35100DE15EB /* MapperViewController.m in Sources */,
+				B5284A4C153823CC00DE15EB /* AFHTTPClient.m in Sources */,
+				B5284A4D153823CC00DE15EB /* AFHTTPRequestOperation.m in Sources */,
+				B5284A4E153823CC00DE15EB /* AFImageRequestOperation.m in Sources */,
+				B5284A4F153823CC00DE15EB /* AFJSONRequestOperation.m in Sources */,
+				B5284A50153823CC00DE15EB /* AFJSONUtilities.m in Sources */,
+				B5284A51153823CC00DE15EB /* AFNetworkActivityIndicatorManager.m in Sources */,
+				B5284A52153823CC00DE15EB /* AFPropertyListRequestOperation.m in Sources */,
+				B5284A53153823CC00DE15EB /* AFURLConnectionOperation.m in Sources */,
+				B5284A54153823CC00DE15EB /* AFXMLRequestOperation.m in Sources */,
+				B5284A55153823CC00DE15EB /* UIImageView+AFNetworking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B52849E91537F35000DE15EB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B52849EA1537F35000DE15EB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B52849F21537F35100DE15EB /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B52849F31537F35100DE15EB /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B52849F81537F35100DE15EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B52849F91537F35100DE15EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B52849FB1537F35100DE15EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mapper/Mapper-Prefix.pch";
+				INFOPLIST_FILE = "Mapper/Mapper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B52849FC1537F35100DE15EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mapper/Mapper-Prefix.pch";
+				INFOPLIST_FILE = "Mapper/Mapper-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B52849D61537F35000DE15EB /* Build configuration list for PBXProject "Mapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B52849F81537F35100DE15EB /* Debug */,
+				B52849F91537F35100DE15EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B52849FA1537F35100DE15EB /* Build configuration list for PBXNativeTarget "Mapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B52849FB1537F35100DE15EB /* Debug */,
+				B52849FC1537F35100DE15EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B52849D31537F35000DE15EB /* Project object */;
+}
