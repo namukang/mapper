@@ -25,7 +25,7 @@
                                 <items>
                                     <barButtonItem style="plain" id="J8e-RA-lGE">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="aeF-89-hqK">
-                                            <rect key="frame" x="6" y="8" width="308" height="30"/>
+                                            <rect key="frame" x="6" y="8" width="227" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="First"/>
@@ -35,6 +35,11 @@
                                                 <action selector="identityChanged:" destination="2" eventType="valueChanged" id="zSg-qe-5DG"/>
                                             </connections>
                                         </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem title="Zoom In" width="71" id="h2j-Vo-e5o">
+                                        <connections>
+                                            <action selector="zoomIn" destination="2" id="xqQ-pl-b3e"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>

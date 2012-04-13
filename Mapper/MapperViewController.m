@@ -14,6 +14,7 @@
 @interface MapperViewController ()
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) ContactAnnotation *partnerAnnotation;
+@property (nonatomic, strong) CLLocation *currentLocation;
 @property (nonatomic) NSInteger user; // FIXME
 @end
 
@@ -21,6 +22,7 @@
 @synthesize mapView = _mapView;
 @synthesize locationManager = _locationManager;
 @synthesize partnerAnnotation = _partnerAnnotation;
+@synthesize currentLocation = _currentLocation;
 @synthesize user = _user; // FIXME
 
 - (CLLocationManager *)locationManager {
@@ -88,6 +90,7 @@
     // Only use update if it's from the last 15 seconds
     if (abs(howRecent) < 15.0)
     {
+        self.currentLocation = newLocation;
         NSLog(@"latitude %+.6f, longitude %+.6f\n",
               newLocation.coordinate.latitude,
               newLocation.coordinate.longitude);
@@ -117,6 +120,33 @@
 
 - (IBAction)identityChanged:(UISegmentedControl *)sender {
     self.user = sender.selectedSegmentIndex;
+}
+
+// Zoom region to fit both self and partner
+-(IBAction)zoomIn {
+    CLLocationCoordinate2D southWest;
+    CLLocationCoordinate2D northEast;
+    
+    southWest.latitude = MIN(self.currentLocation.coordinate.latitude, self.partnerAnnotation.coordinate.latitude);
+    southWest.longitude = MIN(self.currentLocation.coordinate.longitude, self.partnerAnnotation.coordinate.longitude);
+    
+    northEast.latitude = MAX(self.currentLocation.coordinate.latitude, self.partnerAnnotation.coordinate.latitude);
+    northEast.longitude = MAX(self.currentLocation.coordinate.longitude, self.partnerAnnotation.coordinate.longitude);
+    
+    CLLocation *locSouthWest = [[CLLocation alloc] initWithLatitude:southWest.latitude longitude:southWest.longitude];
+    CLLocation *locNorthEast = [[CLLocation alloc] initWithLatitude:northEast.latitude longitude:northEast.longitude];
+    
+    // This is a diag distance (if you wanted tighter you could do NE-NW or NE-SE)
+    CLLocationDistance meters = [locSouthWest distanceFromLocation:locNorthEast];
+    
+    MKCoordinateRegion region;
+    region.center.latitude = (southWest.latitude + northEast.latitude) / 2.0;
+    region.center.longitude = (southWest.longitude + northEast.longitude) / 2.0;
+    region.span.latitudeDelta = meters / 111319.5;
+    region.span.longitudeDelta = 0.0;
+    
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:region];
+    [self.mapView setRegion:adjustedRegion animated:YES];
 }
 
 - (void)viewDidLoad
