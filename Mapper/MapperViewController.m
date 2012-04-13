@@ -40,18 +40,28 @@
 }
 
 - (void)fetchPartnerLocation {
-    // FIXME: Fetch partner's location
-    NSURL *url = [NSURL URLWithString:@"http://graph.facebook.com/dk"];
+    // Fetch partner's location
+    NSString *partnerUrl;
+    if (self.user == 0) {
+        partnerUrl = @"http://mapper-app.herokuapp.com/user/1";
+    } else {
+        partnerUrl = @"http://mapper-app.herokuapp.com/user/0";
+    }
+    NSURL *url = [NSURL URLWithString:partnerUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"Name: %@ %@", [JSON valueForKeyPath:@"first_name"], [JSON valueForKeyPath:@"last_name"]);
-        // FIXME
-        CLLocationDegrees latitude = 41.347330;
-        CLLocationDegrees longitude = -75.661789;
-        CLLocation *loc = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
-        // Show partner's location on map
-        self.partnerAnnotation.coordinate = loc.coordinate;
+        id error = [JSON valueForKeyPath:@"error"];
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            CLLocationDegrees latitude = (int)[JSON valueForKeyPath:@"latitude"];
+            NSLog(@"%f", latitude);
+            CLLocationDegrees longitude = (int)[JSON valueForKeyPath:@"longitude"];
+            CLLocation *loc = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+            // Show partner's location on map
+            self.partnerAnnotation.coordinate = loc.coordinate;   
+        }
     } failure:nil];
     
     [operation start];
@@ -94,8 +104,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self fetchPartnerLocation];
     [self startStandardUpdates];
+    // Fetch partner location every 3 seconds
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self
+                                   selector:@selector(fetchPartnerLocation) userInfo:nil repeats:YES];
 }
 
 - (void)viewDidUnload
