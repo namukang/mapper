@@ -36,9 +36,9 @@
                                             </connections>
                                         </segmentedControl>
                                     </barButtonItem>
-                                    <barButtonItem title="Zoom In" width="71" id="h2j-Vo-e5o">
+                                    <barButtonItem title="Center" width="71" id="h2j-Vo-e5o">
                                         <connections>
-                                            <action selector="zoomIn" destination="2" id="xqQ-pl-b3e"/>
+                                            <action selector="centerPinsOnMap" destination="2" id="0jm-6i-aVt"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface MapperViewController : UIViewController <CLLocationManagerDelegate>
+@interface MapperViewController : UIViewController 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+- (void)startUpdating;
+- (void)stopUpdating;
 @end

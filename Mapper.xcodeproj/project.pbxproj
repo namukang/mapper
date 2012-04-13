@@ -28,6 +28,7 @@
 		B5284A55153823CC00DE15EB /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A4B153823CC00DE15EB /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B5284A57153833C500DE15EB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5284A56153833C500DE15EB /* CoreLocation.framework */; };
 		B5284A5A1538464E00DE15EB /* ContactAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A591538464E00DE15EB /* ContactAnnotation.m */; };
+		B5284A5D1538C63100DE15EB /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = B5284A5C1538C63000DE15EB /* LocationTracker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,8 @@
 		B5284A56153833C500DE15EB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B5284A581538464E00DE15EB /* ContactAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactAnnotation.h; sourceTree = "<group>"; };
 		B5284A591538464E00DE15EB /* ContactAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactAnnotation.m; sourceTree = "<group>"; };
+		B5284A5B1538C63000DE15EB /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
+		B5284A5C1538C63000DE15EB /* LocationTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTracker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				B52849F21537F35100DE15EB /* MainStoryboard.storyboard */,
 				B52849F51537F35100DE15EB /* MapperViewController.h */,
 				B52849F61537F35100DE15EB /* MapperViewController.m */,
+				B5284A5B1538C63000DE15EB /* LocationTracker.h */,
+				B5284A5C1538C63000DE15EB /* LocationTracker.m */,
 				B5284A581538464E00DE15EB /* ContactAnnotation.h */,
 				B5284A591538464E00DE15EB /* ContactAnnotation.m */,
 				B52849E71537F35000DE15EB /* Supporting Files */,
@@ -248,6 +253,7 @@
 				B5284A54153823CC00DE15EB /* AFXMLRequestOperation.m in Sources */,
 				B5284A55153823CC00DE15EB /* UIImageView+AFNetworking.m in Sources */,
 				B5284A5A1538464E00DE15EB /* ContactAnnotation.m in Sources */,
+				B5284A5D1538C63100DE15EB /* LocationTracker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
