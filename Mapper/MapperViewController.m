@@ -55,9 +55,8 @@
         if (error) {
             NSLog(@"%@", error);
         } else {
-            CLLocationDegrees latitude = (int)[JSON valueForKeyPath:@"latitude"];
-            NSLog(@"%f", latitude);
-            CLLocationDegrees longitude = (int)[JSON valueForKeyPath:@"longitude"];
+            CLLocationDegrees latitude = [(NSNumber *)[JSON valueForKeyPath:@"latitude"] doubleValue];
+            CLLocationDegrees longitude = [(NSNumber *)[JSON valueForKeyPath:@"longitude"] doubleValue];
             CLLocation *loc = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
             // Show partner's location on map
             self.partnerAnnotation.coordinate = loc.coordinate;   
@@ -92,7 +91,27 @@
         NSLog(@"latitude %+.6f, longitude %+.6f\n",
               newLocation.coordinate.latitude,
               newLocation.coordinate.longitude);
-        // TODO: Push location to server
+        NSNumber *latitude = [NSNumber numberWithDouble:newLocation.coordinate.latitude];
+        NSNumber *longitude = [NSNumber numberWithDouble:newLocation.coordinate.longitude];
+        // Convert data to JSON
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:latitude, @"latitude", longitude, @"longitude", nil];
+        NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];        
+        // Form POST request
+        NSString *partnerUrl;
+        if (self.user == 0) {
+            partnerUrl = @"http://mapper-app.herokuapp.com/user/0";
+        } else {
+            partnerUrl = @"http://mapper-app.herokuapp.com/user/1";
+        }
+        NSURL *url = [NSURL URLWithString:partnerUrl];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSMutableURLRequest *mutableRequest = [request mutableCopy];
+        [mutableRequest setHTTPMethod:@"POST"];
+        [mutableRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [mutableRequest setHTTPBody:data];
+        // Push location to server
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:mutableRequest success:nil failure:nil];
+        [operation start];
     }
 }
 
