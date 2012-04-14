@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
 
-@interface MapperAppDelegate : UIResponder <UIApplicationDelegate>
+@interface MapperAppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) Facebook *facebook;
 
 @end

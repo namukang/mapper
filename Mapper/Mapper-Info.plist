@@ -42,5 +42,14 @@
 	<array>
 		<string>location</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb407078449305300</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>

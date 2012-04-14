@@ -12,10 +12,43 @@
 @implementation MapperAppDelegate
 
 @synthesize window = _window;
+@synthesize facebook;
+
+- (void)fbLogin {
+    // Check for previously saved access token information
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"FBAccessTokenKey"] 
+        && [defaults objectForKey:@"FBExpirationDateKey"]) {
+        facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+    }
+    // Check for a valid session
+    if (![facebook isSessionValid]) {
+        [facebook authorize:nil];
+    }
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [facebook handleOpenURL:url]; 
+}
+
+- (void)fbDidLogin {
+    // Save user's credentials (access token and expiration date)
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
+    [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
+    [defaults synchronize];
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // Set up Facebook
+    facebook = [[Facebook alloc] initWithAppId:@"407078449305300" andDelegate:self];
+    [self fbLogin];
+    // Turn on updates
     MapperViewController *mapperController = (MapperViewController *)self.window.rootViewController;
     [mapperController startUpdating];
     return YES;
