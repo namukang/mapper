@@ -12,32 +12,39 @@
 @implementation MapperAppDelegate
 
 @synthesize window = _window;
-@synthesize facebook;
+@synthesize facebook = _facebook;
+
+- (Facebook *)facebook {
+    if (!_facebook) {
+        _facebook = [[Facebook alloc] initWithAppId:@"407078449305300" andDelegate:self];
+    }
+    return _facebook;
+}
 
 - (void)fbLogin {
     // Check for previously saved access token information
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"FBAccessTokenKey"] 
         && [defaults objectForKey:@"FBExpirationDateKey"]) {
-        facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
-        facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+        self.facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        self.facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
     }
     // Check for a valid session
-    if (![facebook isSessionValid]) {
-        [facebook authorize:nil];
+    if (![self.facebook isSessionValid]) {
+        [self.facebook authorize:nil];
     }
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [facebook handleOpenURL:url]; 
+    return [self.facebook handleOpenURL:url]; 
 }
 
 - (void)fbDidLogin {
     // Save user's credentials (access token and expiration date)
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
-    [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
+    [defaults setObject:[self.facebook accessToken] forKey:@"FBAccessTokenKey"];
+    [defaults setObject:[self.facebook expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
     
 }
@@ -45,8 +52,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    // Set up Facebook
-    facebook = [[Facebook alloc] initWithAppId:@"407078449305300" andDelegate:self];
+    // Log into Facebook
     [self fbLogin];
     // Turn on updates
     MapperViewController *mapperController = (MapperViewController *)self.window.rootViewController;
